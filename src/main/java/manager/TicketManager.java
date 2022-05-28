@@ -3,6 +3,11 @@ package manager;
 import domain.Ticket;
 import repository.Repository;
 
+import java.util.Arrays;
+
+import static java.util.Arrays.compare;
+import static java.util.Arrays.sort;
+
 public class TicketManager {
 
     protected Repository repository;
@@ -28,6 +33,8 @@ public class TicketManager {
                 result = tmp;
             }
         }
+        Arrays.sort(result);
+
         return result;
     }
 

@@ -3,8 +3,6 @@ package manager;
 import domain.Ticket;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 class TicketManagerTest {
@@ -28,11 +26,10 @@ class TicketManagerTest {
         manager.add(ticket5);
         manager.add(ticket6);
 
-        Ticket[] actual = manager.findAll("LBD", "DME");
-        Arrays.sort(actual);
+
         Ticket[] expected = {ticket4, ticket5, ticket6, ticket1};
 
-        assertArrayEquals(expected, actual);
+        assertArrayEquals(expected, manager.findAll("LBD", "DME"));
 
     }
 
@@ -40,11 +37,9 @@ class TicketManagerTest {
     public void shouldFindFlightByPriceAscendingEmpty() {
 
 
-        Ticket[] actual = manager.findAll("LBD", "DME");
-        Arrays.sort(actual);
         Ticket[] expected = {};
 
-        assertArrayEquals(expected, actual);
+        assertArrayEquals(expected, manager.findAll("LBD", "DME"));
 
     }
 
@@ -53,11 +48,9 @@ class TicketManagerTest {
 
         manager.add(ticket1);
 
-        Ticket[] actual = manager.findAll("LBD", "DME");
-        Arrays.sort(actual);
         Ticket[] expected = {ticket1};
 
-        assertArrayEquals(expected, actual);
+        assertArrayEquals(expected, manager.findAll("LBD", "DME"));
 
     }
 
@@ -71,11 +64,10 @@ class TicketManagerTest {
         manager.add(ticket5);
         manager.add(ticket6);
 
-        Ticket[] actual = manager.findAll("LBD", "TAS");
-        Arrays.sort(actual);
+
         Ticket[] expected = {};
 
-        assertArrayEquals(expected, actual);
+        assertArrayEquals(expected, manager.findAll("LBD", "TAS"));
 
     }
 
